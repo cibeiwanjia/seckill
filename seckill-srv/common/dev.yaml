@@ -1,0 +1,18 @@
+Mysql:
+  User: "root"
+  Password: "4ay1nkal3u8ed77y"
+  Host: "115.190.17.186"
+  Port: 3306
+  Database: "seckill"
+
+Redis:
+  Host: "115.190.17.186"
+  Port: 6379
+  Password: "4ay1nkal3u8ed77y"
+  Database: 0
+
+RabbitMQ:
+  Username: "yh"
+  Password: "yhadmin"
+  Host: "127.0.0.1"
+  Port: "5672"

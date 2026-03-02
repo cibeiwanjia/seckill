@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package seckill;
+
+option go_package = ".";
+
+service SeckillServer {
+  rpc PreSeckillCreate(PreSeckillCreateReq) returns (PreSeckillCreateResp);  //商品预处理接口
+  rpc SearchStock(SearchStockReq) returns (SearchStockResp);  //库存查询接口
+  rpc SeckillOrder(SeckillOrderReq) returns (SeckillOrderResp);  //抢单接口
+}
+
+message PreSeckillCreateReq {
+  int64 product_id = 1;
+  string product_name = 2;
+  int64 stock_quantity = 3;
+  string seckill_price = 4;
+  int64 start_time = 5;
+  int64 end_time = 6;
+  int64 max_per_limit = 7;
+}
+
+message PreSeckillCreateResp {
+  bool success = 1;
+  string info = 2;
+}
+
+message SearchStockReq {
+  int64 product_id = 1;
+}
+
+message SearchStockResp {
+  int64 stock = 1;
+  bool success = 2;
+  string info = 3;
+}
+
+message SeckillOrderReq {
+  int64 user_id = 1;
+  int64 product_id = 2;
+  int64 quantity = 3;
+}
+
+message SeckillOrderResp{
+  bool success = 1;
+  string info = 2;
+}
